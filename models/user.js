@@ -6,4 +6,4 @@ const user = sequelize.define("user",
         email: DataTypes.STRING,
     }
 );
-module.exports = user;
+module.exports = {user};
