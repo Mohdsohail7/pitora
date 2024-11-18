@@ -2,9 +2,13 @@ const express = require("express");
 const cors = require("cors");
 require("dotenv").config();
 
+// const { searchImages } = require("./controllers/searchImages");
+
 const app = express();
 
 const userRoute = require("./routes/user");
+
+const searchImagesRoute = require("./routes/searchImages");
 
 // middleware
 app.use(cors());
@@ -12,6 +16,7 @@ app.use(express.json());
 
 // routes 
 app.use("/api", userRoute);
+app.use("/api", searchImagesRoute);
 
 // defualt route 
 app.get("/", (req, res) => {
