@@ -7,8 +7,11 @@ require("dotenv").config();
 const app = express();
 
 const userRoute = require("./routes/user");
-
+const getUserroute = require("./routes/user");
+const userRouteById = require("./routes/user");
 const searchImagesRoute = require("./routes/searchImages");
+const photosRoute = require("./routes/photoSaveInCollection");
+const getPhotosRoute = require("./routes/photoSaveInCollection");
 
 // middleware
 app.use(cors());
@@ -16,7 +19,11 @@ app.use(express.json());
 
 // routes 
 app.use("/api", userRoute);
+app.use("/api", photosRoute);
 app.use("/api", searchImagesRoute);
+app.use("/api", getUserroute);
+app.use("/api", userRouteById);
+app.use("/api", getPhotosRoute);
 
 // defualt route 
 app.get("/", (req, res) => {

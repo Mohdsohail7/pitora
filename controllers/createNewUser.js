@@ -24,4 +24,30 @@ const createNewUser = async (req, res) => {
     }
 }
 
-module.exports = { createNewUser };
+// get all users
+const getAllUsers = async (req, res) => {
+    const users = await userModel.findAll();
+
+    if (!users || users.length === 0) {
+        return res.status(404).json({ message: "Users not found."});
+    }
+
+    return res.status(200).json({ users });
+}
+
+// get user by id
+const getUserById = async (req, res) => {
+    const id = req.params.id;
+    if (!id || id.length === 0) {
+        return res.status(400).json({ message: "Id is missing."});
+    }
+
+    const user = await userModel.findOne({ where: { id }});
+
+    if (!user || user.length === 0) {
+        return res.status(404).json({ message: "User not found by this id. ",id })
+    }
+    return res.status(200).json({ user });
+}
+
+module.exports = { createNewUser, getAllUsers, getUserById };
