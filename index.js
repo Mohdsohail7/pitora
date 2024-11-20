@@ -12,6 +12,8 @@ const userRouteById = require("./routes/user");
 const searchImagesRoute = require("./routes/searchImages");
 const photosRoute = require("./routes/photoSaveInCollection");
 const getPhotosRoute = require("./routes/photoSaveInCollection");
+const tagRoute = require("./routes/addTagsOnPhoto");
+const getTagsRoute = require("./routes/addTagsOnPhoto");
 
 // middleware
 app.use(cors());
@@ -24,6 +26,8 @@ app.use("/api", searchImagesRoute);
 app.use("/api", getUserroute);
 app.use("/api", userRouteById);
 app.use("/api", getPhotosRoute);
+app.use("/api", tagRoute);
+app.use("/api", getTagsRoute);
 
 // defualt route 
 app.get("/", (req, res) => {

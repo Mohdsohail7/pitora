@@ -7,4 +7,4 @@ const tag = sequelize.define("tag", {
         references: { model: "photos", key: "id"}
     }
 });
-module.exports = tag;
+module.exports = {tag};

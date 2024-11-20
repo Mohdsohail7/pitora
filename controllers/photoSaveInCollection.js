@@ -1,4 +1,5 @@
 const { photo: photoModel } = require("../models/photo");
+const { tag } = require("../models/tag");
 const imageUrlValidation = require("../validations/imageUrlValidation");
 const tagsValidation = require("../validations/tagsValidation");
 
@@ -22,9 +23,12 @@ const photoSaveInCollection = async (req, res) => {
             return res.status(400).json({ error: tagsValidate });
         }
 
-        const photo = await photoModel.create({ imageUrl, description, altDescription, tags, userId });
+        const photo = await photoModel.create({ imageUrl, description, altDescription, userId });
 
-        return res.status(201).json({ message: "Photo saved successfully." });
+        // tags add in separately in tag model
+        const addTags = await tag.bulkCreate(tags.map((tag) => ( {name: tag, photoId: photo.id })));
+
+        return res.status(201).json({ message: "Photo saved successfully.", addTags });
 
     } catch (error) {
         return res.status(500).json({ message: "Photo data not save in database.", error: error.message });
