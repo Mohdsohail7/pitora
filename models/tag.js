@@ -1,4 +1,5 @@
 const { sequelize, DataTypes } = require("../config/database");
+// const { photo } = require("./photo");
 
 const tag = sequelize.define("tag", {
     name: DataTypes.STRING,
@@ -7,4 +8,7 @@ const tag = sequelize.define("tag", {
         references: { model: "photos", key: "id"}
     }
 });
+
+//tag.belongsTo(photo, { foreignKey: "photoId" });
+
 module.exports = {tag};

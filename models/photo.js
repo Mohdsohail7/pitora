@@ -1,4 +1,5 @@
 const { sequelize, DataTypes } = require("../config/database");
+// const { tag } = require("./tag");
 
 const photo = sequelize.define("photo",
     {
@@ -15,4 +16,6 @@ const photo = sequelize.define("photo",
         }
     }
 );
+
+ // photo.hasMany(tag, { foreignKey: "photoId" });
 module.exports = { photo };

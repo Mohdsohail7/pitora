@@ -11,4 +11,4 @@ const searchHistory = sequelize.define("searchHistory", {
         defaultValue: DataTypes.NOW
     }
 });
-module.exports = searchHistory;
+module.exports = { searchHistory };
