@@ -40,6 +40,9 @@ app.get("/", (req, res) => {
 
 const PORT = process.env.PORT || 8000;
 //  server listen
-app.listen(PORT, () => {
-    console.log("Server is running at port number: ", PORT);
-});
+if (require.main === module) {
+    app.listen(PORT, () => {
+        console.log("Server is running at port number: ", PORT);
+    });
+}
+module.exports = { app };

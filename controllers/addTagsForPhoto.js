@@ -40,7 +40,7 @@ const addTagsOnPhoto = async (req, res) => {
 
         const updatedTags = await tagModel.findAll({ where: { photoId }});
 
-        return res.status(201).json({ message: "Tags added successfully", updatedTags });
+        return res.status(201).json({ message: "Tags added successfully" });
     
     } catch (error) {
         return res.status(500).json({ message: "tags not added."});
