@@ -28,7 +28,7 @@ const photoSaveInCollection = async (req, res) => {
         // tags add in separately in tag model
         const addTags = await tag.bulkCreate(tags.map((tag) => ( {name: tag, photoId: photo.id })));
 
-        return res.status(201).json({ message: "Photo saved successfully.", addTags });
+        return res.status(201).json({ message: "Photo saved successfully."});
 
     } catch (error) {
         return res.status(500).json({ message: "Photo data not save in database.", error: error.message });
@@ -42,7 +42,7 @@ const getPhotos = async (req, res) => {
         return res.status(404).json({ message: "Photos not found."});
     }
 
-    return res.status(201).json({ "message": "Photo saved successfully" });
+    return res.status(201).json({ photos });
 }
 
 module.exports = { photoSaveInCollection, getPhotos };
