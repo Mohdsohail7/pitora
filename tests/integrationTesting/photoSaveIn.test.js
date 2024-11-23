@@ -52,7 +52,7 @@ describe("API Endpoint to photo save in collections", () => {
             imageUrl: "https://images.unsplash.com/photo-1480497490787-505ec076689f",
             description: "Beautiful landscape",
             altDescription: "Mountain view",
-            tags: [],
+            tags: [""],
             userId: 1
           });
 
