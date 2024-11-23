@@ -24,7 +24,7 @@ const searchImages = async (req, res) => {
 
         return res.status(200).json({ photos });
     } catch (error) {
-        return res.status(401).json({ error: "Failed to fetch data from Unsplash API.", errorDetails: error.message} );
+        return res.status(500).json({ error: "Failed to fetch data from Unsplash API.", errorDetails: error.message} );
     }
 }
 module.exports = { searchImages };
