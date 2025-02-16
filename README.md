@@ -41,6 +41,21 @@ node index.js // this command start your server
 🧪 How to Run Tests?
 npm test // This will run API tests using Jest and Supertest.
 
+📌 Features
+✅ Search and save images
+✅ Manage collections and tags
+✅ Track search history
+✅ Secure and fast backend
+
+🤝 Contributing
+If you want to contribute or add new features, feel free to submit a pull request! 😊
+
+ If you like this project, don't forget to give it a ⭐! 😃
+
+📜 License
+This project is licensed under the MIT License.
+
+
 
 
 
