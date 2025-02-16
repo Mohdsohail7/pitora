@@ -26,7 +26,7 @@
 
 🚀 How to Set Up for this project ?
 1️⃣ Clone the Project
-git clone https://github.com/yourusername/pitora.git
+git clone https://github.com/Mohdsohail7/pitora.git
 cd pitora
 
 2️⃣ Install Dependencies
