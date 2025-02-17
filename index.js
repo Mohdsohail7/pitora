@@ -1,8 +1,12 @@
 const express = require("express");
 const cors = require("cors");
 require("dotenv").config();
+const {connectDB}  = require("./config/database");
 
 // const { searchImages } = require("./controllers/searchImages");
+
+// database connect
+connectDB();
 
 const app = express();
 
@@ -16,6 +20,7 @@ const tagRoute = require("./routes/addTagsOnPhoto");
 const getTagsRoute = require("./routes/addTagsOnPhoto");
 const searchPotoByTagRoute = require("./routes/searchPhotoByTag");
 const searchHistoryBasedOnUserIdRoute = require("./routes/searchHistoryBasedOnUserId");
+
 
 // middleware
 app.use(cors());

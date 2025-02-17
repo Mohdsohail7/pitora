@@ -4,6 +4,7 @@
   "description": "i will create photo creation app",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "jest"
   },
   "repository": {

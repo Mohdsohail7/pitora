@@ -1,4 +1,4 @@
-const { sequelize, Dataypes, DataTypes} = require("../config/database");
+const { sequelize, DataTypes} = require("../config/database");
 
 const user = sequelize.define("user",
     {

@@ -9,4 +9,14 @@ const sequelize = new sq.Sequelize({
     storage: db.storage
 });
 
-module.exports = { DataTypes: sq.DataTypes, sequelize };
+// database connection
+async function connectDB() {
+    try {
+        await sequelize.authenticate();
+        console.log('Connection has been established successfully.');
+    } catch (error) {
+        console.error('Unable to connect to the database:', error);
+    }
+}
+
+module.exports = { DataTypes: sq.DataTypes, sequelize, connectDB };
