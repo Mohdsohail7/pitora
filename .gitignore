@@ -5,7 +5,7 @@ node_modules/
 .env
 
 # Ignore image files
-*.png
+
 *.jpeg
 *.jpg
 *.gif
